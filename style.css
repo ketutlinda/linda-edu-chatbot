@@ -1,0 +1,18 @@
+body {
+    background-color: #e5ddd5;
+}
+
+/* Styling untuk tombol clear chat */
+button[kind="secondary"] {
+    background-color: #f44336 !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
+
+/* Chat bubble tweak */
+.stChatMessage {
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin-bottom: 6px;
+}
