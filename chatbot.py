@@ -4,7 +4,7 @@ def setup_model(api_key: str):
     """Konfigurasi Gemini model"""
     genai.configure(api_key=api_key)
     return genai.GenerativeModel(
-        "gemini-1.5-flash",
+        "gemini-1.5-flash-latest",
         system_instruction=(
             "Kamu adalah asisten pendidikan yang menjawab dengan santai, "
             "mudah dipahami, dan penuh contoh. Jangan terlalu formal, "
@@ -19,3 +19,4 @@ def get_response(model, prompt: str) -> str:
         return response.text
     except Exception as e:
         return f"⚠️ Error: {str(e)}"
+
