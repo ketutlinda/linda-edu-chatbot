@@ -1,5 +1,5 @@
 import streamlit as st
-from chatbot import setup_model, get_response
+from chatbot import get_response
 import os
 
 st.set_page_config(page_title="EduBot Santai - Gemini AI", page_icon="📚")
@@ -64,3 +64,4 @@ if user_input := st.chat_input("Type your message..."):
     bot_reply = get_response(api_key, user_input)
     st.session_state.messages.append(("assistant", bot_reply))
     st.chat_message("assistant", avatar=bot_avatar).markdown(bot_reply)
+
