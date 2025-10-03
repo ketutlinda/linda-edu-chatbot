@@ -32,8 +32,8 @@ st.markdown(
 api_key = st.secrets["GEMINI_API_KEY"]
 
 # Setup model sekali saja
-if "model" not in st.session_state:
-    st.session_state.model = setup_model(api_key)
+#if "model" not in st.session_state:
+#    st.session_state.model = setup_model(api_key)
 
 # Simpan history chat
 if "messages" not in st.session_state:
@@ -60,6 +60,7 @@ if user_input := st.chat_input("Type your message..."):
     st.session_state.messages.append(("user", user_input))
     st.chat_message("user", avatar=user_avatar).markdown(user_input)
 
-    bot_reply = get_response(st.session_state.model, user_input)
+    #bot_reply = get_response(st.session_state.model, user_input)
+    bot_reply = get_response(api_key, user_input)
     st.session_state.messages.append(("assistant", bot_reply))
     st.chat_message("assistant", avatar=bot_avatar).markdown(bot_reply)
